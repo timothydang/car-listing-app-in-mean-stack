@@ -1,0 +1,14 @@
+navbar
+
+.container
+  .listingIndex
+    div.listing.col-lg-12(ng-repeat='listing in indexCtrl.allListings')
+      a.clearfix(href='listing/{{listing._id}}')
+        span
+          | {{listing.year}} {{listing.make}} {{listing.model}}
+        .pull-right
+          span(ng-if="listing.priceType=='POA'") POA
+          span(ng-if="listing.priceType=='EGC'") {{listing.egcPrice | currency: $ : 0}}
+          span(ng-if="listing.priceType=='DAP'") {{listing.dapPrice | currency: $ : 0}}
+
+footer

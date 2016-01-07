@@ -1,0 +1,16 @@
+$icon-font-path: "../bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/";
+@import '../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap';
+$fa-font-path: "../bower_components/font-awesome/fonts";
+@import '../bower_components/font-awesome/scss/font-awesome';
+
+/**
+ * App-wide Styles
+ */
+
+
+// Component styles are injected through grunt
+// injector
+@import 'components/contactForm/contactForm.scss';
+@import 'styles/index.scss';
+@import 'styles/listing.scss';
+// endinjector

@@ -1,0 +1,17 @@
+navbar
+
+.container
+  .enquiriesIndex
+    div.listing.col-lg-12(ng-repeat='enquiry in enquiriesCtrl.allEnquiries')
+      .row
+        span.col-xs-6.col-sm-2.col-md-2
+          | Name
+        strong.col-xs-6.col-sm-3.col-md-4.o
+          | {{enquiry.name}}
+
+        span.col-xs-6.col-sm-2.col-md-2
+          | Email
+        strong.col-xs-6.col-sm-3.col-md-4
+          | {{enquiry.email}}
+
+footer

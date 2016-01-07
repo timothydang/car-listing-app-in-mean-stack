@@ -1,0 +1,37 @@
+navbar
+
+.container
+  .listingDetails
+    .row
+      span.col-xs-6.col-sm-2.col-md-2
+        | Make
+      strong.col-xs-6.col-sm-3.col-md-4.o
+        | {{listingCtrl.data.make}}
+
+      span.col-xs-6.col-sm-2.col-md-2
+        | Model
+      strong.col-xs-6.col-sm-3.col-md-4
+        | {{listingCtrl.data.model}}
+
+    .row
+      span.col-xs-6.col-sm-2.col-md-2
+        | Year
+      strong.col-xs-6.col-sm-3.col-md-4.bold
+        | {{listingCtrl.data.year}}
+
+      span.col-xs-6.col-sm-2.col-md-2
+        | Price
+      strong.col-xs-6.col-sm-3.col-md-4
+        span(ng-if="listingCtrl.data.priceType=='POA'") POA
+        span(ng-if="listingCtrl.data.priceType=='EGC'") {{listingCtrl.data.egcPrice | currency: $ : 0}}
+        span(ng-if="listingCtrl.data.priceType=='DAP'") {{listingCtrl.data.dapPrice | currency: $ : 0}}
+
+    .row(ng-if="listingCtrl.data.comments")
+      span.col-xs-6.col-sm-2.col-md-2
+        | Comments
+      blockquote.col-xs-12.col-sm-9.col-md-10.small
+        | {{listingCtrl.data.comments}}
+
+  contact-form
+
+footer

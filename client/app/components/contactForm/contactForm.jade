@@ -1,0 +1,33 @@
+.contactForm.col-xs-12.col-sm-8(ng-controller="ContactFormController")
+  ng-form(name="contactform", novalidate)
+    .form-group(ng-class="{ 'has-error': contactform.contactName.$invalid && contactform.contactName.$dirty }")
+      label(for="contactName") Name
+
+      input.form-control(type="text", ng-model="enquiry.name", name="contactName", placeholder="Name", required)
+
+      span.help-block(ng-show="contactform.contactName.$invalid && contactform.contactName.$dirty")
+        | Please provide your name
+
+    .form-group(ng-class="{ 'has-error': contactform.contactEmail.$invalid && contactform.contactEmail.$dirty }")
+      label(for="contactEmail") Email Address
+
+      input.form-control(type="email", ng-model="enquiry.email", name="contactEmail", placeholder="Email Address", required)
+
+      span.help-block(ng-show="contactform.contactEmail.$invalid && contactform.contactEmail.$dirty")
+        | Please provide your email address
+
+    .form-group(ng-class="{ 'has-error': contactform.contactDetails.$invalid && contactform.contactDetails.$dirty }")
+      label(for="contactDetails") Enquiry Details
+
+      textarea.form-control(name="contactDetails", ng-model="enquiry.content", placeholder="", required)
+
+      span.help-block(ng-show="contactform.contactDetails.$invalid && contactform.contactDetails.$dirty")
+        | Please tell us the details of your enquiry
+
+    button.btn.btn-default(type="button", ng-click="contactForm.submit(this)", ng-disabled="contactform.$invalid") Submit
+
+    div.alert.bg-success.padding-15(ng-if='formSuccess')
+      | Your enquiry has been submitted successfully. We will be in contact with you shortly.
+
+    div.alert.bg-danger.padding-15(ng-if='formError')
+      | An error has occurred while submitting your enquiry. Please try again later.
