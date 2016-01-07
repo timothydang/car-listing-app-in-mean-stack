@@ -5,7 +5,7 @@ navbar
     .row
       span.col-xs-6.col-sm-2.col-md-2
         | Make
-      strong.col-xs-6.col-sm-3.col-md-4.o
+      strong.col-xs-6.col-sm-3.col-md-4
         | {{listingCtrl.data.make}}
 
       span.col-xs-6.col-sm-2.col-md-2
@@ -31,6 +31,22 @@ navbar
         | Comments
       blockquote.col-xs-12.col-sm-9.col-md-10.small
         | {{listingCtrl.data.comments}}
+
+    .row
+      span.col-xs-6.col-sm-2.col-md-2
+        | Contact
+      span.col-xs-6.col-sm-3.col-md-4
+        | {{listingCtrl.data.contact_name}}
+        br
+        | {{listingCtrl.data.contact_email}}
+        br
+        | {{listingCtrl.data.contact_phone}}
+
+    .row(ng-if="listingCtrl.data.dealer_abn")
+      span.col-xs-6.col-sm-2.col-md-2
+        | Dealer ABN
+      span.col-xs-6.col-sm-3.col-md-4
+        | {{listingCtrl.data.dealer_abn}}
 
   contact-form
 
