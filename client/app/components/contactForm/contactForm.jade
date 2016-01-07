@@ -1,5 +1,7 @@
 .contactForm.col-xs-12.col-sm-8(ng-controller="ContactFormController")
   ng-form(name="contactform", novalidate)
+    h4 Enquiry form
+
     .form-group(ng-class="{ 'has-error': contactform.contactName.$invalid && contactform.contactName.$dirty }")
       label(for="contactName") Name
 

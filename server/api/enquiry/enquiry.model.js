@@ -1,7 +1,6 @@
 'use strict';
 
 var mongoose = require('bluebird').promisifyAll(require('mongoose'));
-var ListingSchema = require('mongoose').model('Listing');
 
 var EnquirySchema = new mongoose.Schema({
   name: String,

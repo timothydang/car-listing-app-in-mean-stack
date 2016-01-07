@@ -13,7 +13,7 @@ describe('Controller: IndexController', function() {
   beforeEach(inject(function(_$httpBackend_, $controller, $rootScope) {
     $httpBackend = _$httpBackend_;
     $httpBackend.expectGET('/api/listings')
-      .respond(['HTML5 Boilerplate', 'AngularJS', 'Karma', 'Express']);
+      .respond(['listing 1', 'listing 2', 'listing 3', 'listing 4']);
 
     scope = $rootScope.$new();
     IndexController = $controller('IndexController', {
