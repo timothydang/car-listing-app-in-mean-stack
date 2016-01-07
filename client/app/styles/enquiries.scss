@@ -1,0 +1,14 @@
+.enquiriesIndex {
+  .enquiry {
+    padding: 15px 0 5px;
+    border-bottom: 1px solid #CCC;
+
+    &:last-child {
+      border-bottom: 0;
+    }
+  }
+
+  .row {
+    margin: 0 0 10px;
+  }
+}

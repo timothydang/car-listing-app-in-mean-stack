@@ -61,7 +61,9 @@ function removeEntity(res) {
 
 // Gets a list of Enquirys
 export function index(req, res) {
-  Enquiry.findAsync()
+  Enquiry.find({})
+    .populate("listing")
+    .execAsync()
     .then(responseWithResult(res))
     .catch(handleError(res));
 }
@@ -69,6 +71,7 @@ export function index(req, res) {
 // Gets a single Enquiry from the DB
 export function show(req, res) {
   Enquiry.findByIdAsync(req.params.id)
+    .populate('listing')
     .then(handleEntityNotFound(res))
     .then(responseWithResult(res))
     .catch(handleError(res));

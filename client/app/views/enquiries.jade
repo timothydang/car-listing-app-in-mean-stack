@@ -2,16 +2,38 @@ navbar
 
 .container
   .enquiriesIndex
-    div.listing.col-lg-12(ng-repeat='enquiry in enquiriesCtrl.allEnquiries')
+    div.enquiry.col-lg-12(ng-repeat="enquiry in enquiriesCtrl.allEnquiries | orderBy: '-createdAt'")
       .row
-        span.col-xs-6.col-sm-2.col-md-2
+        span.col-xs-6.col-sm-2.col-md-1
           | Name
-        strong.col-xs-6.col-sm-3.col-md-4.o
+        strong.col-xs-6.col-sm-3.col-md-4
           | {{enquiry.name}}
 
-        span.col-xs-6.col-sm-2.col-md-2
+        span.col-xs-6.col-sm-2.col-md-1
           | Email
         strong.col-xs-6.col-sm-3.col-md-4
           | {{enquiry.email}}
 
-footer
+      .row
+        span.col-xs-6.col-sm-2.col-md-1
+          | Listing
+        span.col-xs-6.col-sm-4
+          a(href='listing/{{enquiry.listing._id}}' target='_blank')
+            | {{enquiry.listing.year}} {{enquiry.listing.make}} {{enquiry.listing.model}}
+
+        span.col-xs-6.col-sm-2.col-md-1
+          | Date
+        span.col-xs-6.col-sm-4
+          | {{enquiry.createdAt | date : 'd MMM yyyy HH:mm:ss' }}
+
+      .row
+        span.col-xs-6.col-sm-2.col-md-1
+          | Enquiry
+        span.col-xs-6.col-sm-3.col-md-4.o
+          | {{enquiry.content}}
+
+
+
+    p(ng-if="enquiriesCtrl.allEnquiries.length === 0")
+      | No enquiry has been recorded yet.
+

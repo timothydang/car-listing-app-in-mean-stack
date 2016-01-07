@@ -10,7 +10,8 @@ var EnquirySchema = new mongoose.Schema({
   listing: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Listing'
-  }
+  },
+  createdAt: { type: Date, default: Date.now }
 });
 
 export default mongoose.model('Enquiry', EnquirySchema);
